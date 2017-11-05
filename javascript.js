@@ -25,6 +25,9 @@ $("#country").html(location.country_name);
 $("#city").html(location.city);
 $("#latitude").html(location.latitude);
 $("#longitude").html(location.longitude);
+ 
+
+ $.getJSON("api.openweathermap.org/data/2.5/weather?lat="location.latitude+"&lon="location.longitude +)
 })
 
 
