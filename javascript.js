@@ -20,7 +20,11 @@ function displayTemp(F,c){
 
 //function rende$
 $.getJSON("https://freegeoip.net/json/").done(function(location){
-console.log(location);
+//console.log(location);
+$("#country").html(location.country_name);
+$("#city").html(location.city);
+$("#latitude").html(location.latitude);
+$("#longitude").html(location.longitude);
 })
 
 
