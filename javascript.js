@@ -18,7 +18,10 @@ function displayTemp(F,c){
 	return Math.round(F)+"&deg; F";
 }
 
-//function render
+//function rende$
+$.getJSON("https://freegeoip.net/json/").done(function(location){
+console.log(location);
+})
 
 
-});
+})
