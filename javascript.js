@@ -20,14 +20,19 @@ function displayTemp(F,c){
 
 //function rende$
 $.getJSON("https://freegeoip.net/json/").done(function(location){
-//console.log(location);
+//console.log(location); success
 $("#country").html(location.country_name);
 $("#city").html(location.city);
 $("#latitude").html(location.latitude);
 $("#longitude").html(location.longitude);
  
 
- $.getJSON("api.openweathermap.org/data/2.5/weather?lat="location.latitude+"&lon="location.longitude +)
+ $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="location.latitude+"&lon="location.longitude +"&units=imperial&appid=d20e2d0b1e9f9f54d98e47b09fd3887b",function(data){
+ apiData=data;
+  // console.log(apiData); success!
+ //render(apiData,c);
+
+})
 })
 
 
