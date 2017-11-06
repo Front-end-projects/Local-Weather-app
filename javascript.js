@@ -18,7 +18,20 @@ function displayTemp(F,c){
 	return Math.round(F)+"&deg; F";
 }
 
-//function rende$
+function render(data,c){
+var currentWeather = data.weather[0].description;
+var currentTemp = displayTemp(data.main.temp,c);
+var icon = data.weather[0].icon;
+
+
+$("#currentTemp").html(currentTemp);
+$("#currentWeather").html(currentWeather);
+
+
+var apiIcon = "http://openweathermap.org/img/w/10d.png" + icon + ".png";
+$("#currentTemp").prepend("<img src=" + apiIcon + ">");
+}
+
 $.getJSON("https://freegeoip.net/json/").done(function(location){
 //console.log(location); success
 $("#country").html(location.country_name);
@@ -27,10 +40,14 @@ $("#latitude").html(location.latitude);
 $("#longitude").html(location.longitude);
  
 
- $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="location.latitude+"&lon="location.longitude +"&units=imperial&appid=d20e2d0b1e9f9f54d98e47b09fd3887b",function(data){
+ $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+location.latitude+"&lon="+location.longitude +"&units=imperial&appid=8be8049d94c7596ed11ff73347620f0d",function(data){
  apiData=data;
   // console.log(apiData); success!
- //render(apiData,c);
+ render(apiData,c);
+ $("#toggle").click(fucntion(){
+ 	c=!c
+ 	render(data,c);
+ })
 
 })
 })
