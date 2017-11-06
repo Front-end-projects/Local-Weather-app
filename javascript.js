@@ -28,7 +28,7 @@ $("#currentTemp").html(currentTemp);
 $("#currentWeather").html(currentWeather);
 
 
-var apiIcon = "http://openweathermap.org/img/w/10d.png" + icon + ".png";
+var apiIcon = "http://openweathermap.org/img/w/" + icon + ".png";
 $("#currentTemp").prepend("<img src=" + apiIcon + ">");
 }
 
@@ -48,7 +48,11 @@ $("#longitude").html(location.longitude);
  	c=!c
  	render(data,c);
  })
+ var id= data.weather[0].id,
+ bgIndex,
+ backgroundId[299,499,599,699,799,800];
 
+    backgroundId.push(id);
 })
 })
 
